@@ -14,8 +14,8 @@ spec:
          type: front-end
      spec:
          containers:
-           - name: angular-14-app-cont
-             image: "franaznarteralco/angular-14-app:latest"
+           - name: angular-14-app
+             image: "franaznarteralco/frontend-demo:latest"
              imagePullPolicy: Always
   replicas: 1
   selector:
@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: angular-14-app-service
+  name: angular-14-app
 spec:
   selector:
     app: angular
