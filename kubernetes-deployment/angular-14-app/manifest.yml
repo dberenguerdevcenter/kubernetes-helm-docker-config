@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-14-app
+  labels:
+     app: angular-14-app
+     type: front-end
+spec:
+  template:
+     metadata:
+       name: angular-14-app
+       labels: 
+         app: angular
+         type: front-end
+     spec:
+         containers:
+           - name: angular-14-app-cont
+             image: "franaznarteralco/angular-14-app:latest"
+             imagePullPolicy: Always
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular
+      type: front-end
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-14-app-service
+spec:
+  selector:
+    app: angular
+  type: NodePort  
+  ports:
+    - protocol: TCP
+      targetPort: 8080
+      port: 80
+      nodePort: 30000
