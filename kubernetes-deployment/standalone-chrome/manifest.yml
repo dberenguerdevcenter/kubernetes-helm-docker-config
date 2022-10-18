@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: standalone-chrome
+  labels:
+    app: standalone-chrome
+    type: node-chrome
+spec:
+  template:
+    metadata:
+      name: standalone-chrome
+      labels:
+        app: chrome
+        type: node-chrome
+    spec:
+      containers:
+        - name: standalone-chrome
+          image: "selenium/standalone-chrome"
+          imagePullPolicy: Always
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chrome
+      type: node-chrome
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: standalone-chrome
+spec:
+  selector:
+    app: chrome
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      targetPort: 4444
+      port: 4444
+      nodePort: 30003
