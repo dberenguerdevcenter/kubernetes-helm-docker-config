@@ -30,7 +30,7 @@ metadata:
 spec:
   selector:
     app: chrome
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       targetPort: 4444

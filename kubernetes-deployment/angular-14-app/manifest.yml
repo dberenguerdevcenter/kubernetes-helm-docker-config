@@ -30,7 +30,7 @@ metadata:
 spec:
   selector:
     app: angular
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       targetPort: 80
