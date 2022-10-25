@@ -30,7 +30,7 @@ metadata:
 spec:
   selector:
     app: spring-boot
-  type: NodePort
+  type: LoadBalancer
   ports:
     - protocol: TCP
       targetPort: 8082
