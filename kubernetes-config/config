@@ -4,7 +4,7 @@ clusters:
     certificate-authority: ca.crt
     extensions:
     - extension:
-        last-update: Thu, 01 Sep 2022 10:23:54 CEST
+        last-update: Tue, 15 Nov 2022 08:29:22 CET
         provider: minikube.sigs.k8s.io
         version: v1.26.1
       name: cluster_info
@@ -15,7 +15,7 @@ contexts:
     cluster: minikube
     extensions:
     - extension:
-        last-update: Thu, 01 Sep 2022 10:23:54 CEST
+        last-update: Tue, 15 Nov 2022 08:29:22 CET
         provider: minikube.sigs.k8s.io
         version: v1.26.1
       name: context_info
