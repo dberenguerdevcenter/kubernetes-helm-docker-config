@@ -8,7 +8,7 @@ clusters:
         provider: minikube.sigs.k8s.io
         version: v1.29.0
       name: cluster_info
-    server: https://192.168.49.2:51210
+    server: https://192.168.49.2:8443
   name: minikube
 contexts:
 - context:
